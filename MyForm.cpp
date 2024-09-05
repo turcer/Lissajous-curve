@@ -12,7 +12,7 @@ void main(array<String^>^ arg) {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
 
-    OSRGZ4sem::MyForm form; //WinFormsTest - èìÿ âàøåãî ïðîåêòà
+    OSRGZ4sem::MyForm form; //WinFormsTest - Ð¸Ð¼Ñ Ð²Ð°ÑˆÐµÐ³Ð¾ Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð°
     Application::Run(% form);
 }
 
@@ -23,108 +23,6 @@ System::Void OSRGZ4sem::MyForm::button1_Click(System::Object^ sender, System::Ev
 
     if(Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
     Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(1000);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-    if (Worker.isDataUpdated())  this->chart->Series[0]->Points->AddXY(Worker.getDataX(), Worker.getDataY());
-    Sleep(500);
-
-
-
-
 
 
     /*this->chart->Series[0]->Points->Clear();
@@ -171,6 +69,4 @@ System::Void OSRGZ4sem::MyForm::trackBar6_Scroll(System::Object^ sender, System:
     Worker.PARAMS.Dy = trackBar6->Value;
     label6->Text = String::Format("Dy = {0}", Worker.PARAMS.Dy);
 }
-
-
 
