@@ -4,13 +4,13 @@
 
 RWorker::RWorker()
 {
-    //Ñîáûòèå ñ ðó÷íûì óïðàâëåíèåì, èçíà÷àëüíî àêòèâíîå
+    //Ð¡Ð¾Ð±Ñ‹Ñ‚Ð¸Ðµ Ñ Ñ€ÑƒÑ‡Ð½Ñ‹Ð¼ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸ÐµÐ¼, Ð¸Ð·Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¾ Ð°ÐºÑ‚Ð¸Ð²Ð½Ð¾Ðµ
     hUpdateEvtX = CreateEvent(NULL, TRUE, TRUE, NULL);
     hUpdateEvtY = CreateEvent(NULL, TRUE, TRUE, NULL);
-    //Ñîáûòèå ñ ðó÷íûì óïðàâëåíèåì, èçíà÷àëüíî íåàêòèâíîå
+    //Ð¡Ð¾Ð±Ñ‹Ñ‚Ð¸Ðµ Ñ Ñ€ÑƒÑ‡Ð½Ñ‹Ð¼ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸ÐµÐ¼, Ð¸Ð·Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¾ Ð½ÐµÐ°ÐºÑ‚Ð¸Ð²Ð½Ð¾Ðµ
     hStopEvtX = CreateEvent(NULL, TRUE, FALSE, NULL);
     hStopEvtY = CreateEvent(NULL, TRUE, FALSE, NULL);
-    //Ìþòåêñ, ïîêà ñâîáîäíûé
+    //ÐœÑŽÑ‚ÐµÐºÑ, Ð¿Ð¾ÐºÐ° ÑÐ²Ð¾Ð±Ð¾Ð´Ð½Ñ‹Ð¹
     hMutex = CreateMutex(NULL, FALSE, "");
 
     DATA.x = 0;
@@ -22,13 +22,13 @@ RWorker::RWorker()
     PARAMS.Wy = 0;
     PARAMS.Dy = 0;
 
-    hThread1 = INVALID_HANDLE_VALUE; //ïîòîê ïîêà íå çàïóùåí
+    hThread1 = INVALID_HANDLE_VALUE; //Ð¿Ð¾Ñ‚Ð¾Ðº Ð¿Ð¾ÐºÐ° Ð½Ðµ Ð·Ð°Ð¿ÑƒÑ‰ÐµÐ½
     hThread2 = INVALID_HANDLE_VALUE;
 }
 
 RWorker::~RWorker()
 {
-    stopWorkX();  //åñëè ðàáîòàëè, îñòàíàâëèâàåìñÿ
+    stopWorkX();  //ÐµÑÐ»Ð¸ Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð»Ð¸, Ð¾ÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÐ¼ÑÑ
     stopWorkY();
     CloseHandle(hUpdateEvtX);
     CloseHandle(hUpdateEvtY);
@@ -63,26 +63,26 @@ void RWorker::increaseTime()
 
 void    RWorker::startWorkX()
 {
-    if (hThread1 != INVALID_HANDLE_VALUE) return; //óæå çàïóùåí
-    ResetEvent(hStopEvtX); //ïåðåä íà÷àëîì ðàáîòû ñáðàñûâàåì ôëàã îñòàíîâêè
-    hThread1 = CreateThread(NULL, 0, ThreadFuncX, this, 0, NULL); //çàïóñêàåìñÿ â ðàáîòó
+    if (hThread1 != INVALID_HANDLE_VALUE) return; //ÑƒÐ¶Ðµ Ð·Ð°Ð¿ÑƒÑ‰ÐµÐ½
+    ResetEvent(hStopEvtX); //Ð¿ÐµÑ€ÐµÐ´ Ð½Ð°Ñ‡Ð°Ð»Ð¾Ð¼ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ ÑÐ±Ñ€Ð°ÑÑ‹Ð²Ð°ÐµÐ¼ Ñ„Ð»Ð°Ð³ Ð¾ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ¸
+    hThread1 = CreateThread(NULL, 0, ThreadFuncX, this, 0, NULL); //Ð·Ð°Ð¿ÑƒÑÐºÐ°ÐµÐ¼ÑÑ Ð² Ñ€Ð°Ð±Ð¾Ñ‚Ñƒ
 }
 
 void    RWorker::startWorkY()
 {
-    if (hThread2 != INVALID_HANDLE_VALUE) return; //óæå çàïóùåí
-    ResetEvent(hStopEvtY); //ïåðåä íà÷àëîì ðàáîòû ñáðàñûâàåì ôëàã îñòàíîâêè
-    hThread2 = CreateThread(NULL, 0, ThreadFuncY, this, 0, NULL); //çàïóñêàåìñÿ â ðàáîòó
+    if (hThread2 != INVALID_HANDLE_VALUE) return; //ÑƒÐ¶Ðµ Ð·Ð°Ð¿ÑƒÑ‰ÐµÐ½
+    ResetEvent(hStopEvtY); //Ð¿ÐµÑ€ÐµÐ´ Ð½Ð°Ñ‡Ð°Ð»Ð¾Ð¼ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ ÑÐ±Ñ€Ð°ÑÑ‹Ð²Ð°ÐµÐ¼ Ñ„Ð»Ð°Ð³ Ð¾ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ¸
+    hThread2 = CreateThread(NULL, 0, ThreadFuncY, this, 0, NULL); //Ð·Ð°Ð¿ÑƒÑÐºÐ°ÐµÐ¼ÑÑ Ð² Ñ€Ð°Ð±Ð¾Ñ‚Ñƒ
 }
 
 void    RWorker::stopWorkX()
 {
-    if (hThread1 == INVALID_HANDLE_VALUE) return; //íå çàïóùåí
-    SetEvent(hStopEvtX); //âçâîäèì ôëàã îñòàíîâêè
-    //æäåì, êîãäà ïîòîê çàìåòèò íàø ôëàã è îñòàíîâèòñÿ
+    if (hThread1 == INVALID_HANDLE_VALUE) return; //Ð½Ðµ Ð·Ð°Ð¿ÑƒÑ‰ÐµÐ½
+    SetEvent(hStopEvtX); //Ð²Ð·Ð²Ð¾Ð´Ð¸Ð¼ Ñ„Ð»Ð°Ð³ Ð¾ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ¸
+    //Ð¶Ð´ÐµÐ¼, ÐºÐ¾Ð³Ð´Ð° Ð¿Ð¾Ñ‚Ð¾Ðº Ð·Ð°Ð¼ÐµÑ‚Ð¸Ñ‚ Ð½Ð°Ñˆ Ñ„Ð»Ð°Ð³ Ð¸ Ð¾ÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑÑ
     if (WaitForSingleObject(hThread1, 5000) != WAIT_OBJECT_0)
     {
-        //ïðîæäàëè ïÿòü ìèíóò, íå îñòàíîâèëñÿ, "ïðèáîëåë" âèäèìî, ïðèñòðåëèì, ÷òîáû íå ìó÷àëñÿ
+        //Ð¿Ñ€Ð¾Ð¶Ð´Ð°Ð»Ð¸ Ð¿ÑÑ‚ÑŒ Ð¼Ð¸Ð½ÑƒÑ‚, Ð½Ðµ Ð¾ÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ð»ÑÑ, "Ð¿Ñ€Ð¸Ð±Ð¾Ð»ÐµÐ»" Ð²Ð¸Ð´Ð¸Ð¼Ð¾, Ð¿Ñ€Ð¸ÑÑ‚Ñ€ÐµÐ»Ð¸Ð¼, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð½Ðµ Ð¼ÑƒÑ‡Ð°Ð»ÑÑ
         TerminateThread(hThread1, 1);
     }
     CloseHandle(hThread1);
@@ -91,12 +91,12 @@ void    RWorker::stopWorkX()
 
 void    RWorker::stopWorkY()
 {
-    if (hThread2 == INVALID_HANDLE_VALUE) return; //íå çàïóùåí
-    SetEvent(hStopEvtY); //âçâîäèì ôëàã îñòàíîâêè
-    //æäåì, êîãäà ïîòîê çàìåòèò íàø ôëàã è îñòàíîâèòñÿ
+    if (hThread2 == INVALID_HANDLE_VALUE) return; //Ð½Ðµ Ð·Ð°Ð¿ÑƒÑ‰ÐµÐ½
+    SetEvent(hStopEvtY); //Ð²Ð·Ð²Ð¾Ð´Ð¸Ð¼ Ñ„Ð»Ð°Ð³ Ð¾ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ¸
+    //Ð¶Ð´ÐµÐ¼, ÐºÐ¾Ð³Ð´Ð° Ð¿Ð¾Ñ‚Ð¾Ðº Ð·Ð°Ð¼ÐµÑ‚Ð¸Ñ‚ Ð½Ð°Ñˆ Ñ„Ð»Ð°Ð³ Ð¸ Ð¾ÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑÑ
     if (WaitForSingleObject(hThread2, 5000) != WAIT_OBJECT_0)
     {
-        //ïðîæäàëè ïÿòü ìèíóò, íå îñòàíîâèëñÿ, "ïðèáîëåë" âèäèìî, ïðèñòðåëèì, ÷òîáû íå ìó÷àëñÿ
+        //Ð¿Ñ€Ð¾Ð¶Ð´Ð°Ð»Ð¸ Ð¿ÑÑ‚ÑŒ Ð¼Ð¸Ð½ÑƒÑ‚, Ð½Ðµ Ð¾ÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ð»ÑÑ, "Ð¿Ñ€Ð¸Ð±Ð¾Ð»ÐµÐ»" Ð²Ð¸Ð´Ð¸Ð¼Ð¾, Ð¿Ñ€Ð¸ÑÑ‚Ñ€ÐµÐ»Ð¸Ð¼, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð½Ðµ Ð¼ÑƒÑ‡Ð°Ð»ÑÑ
         TerminateThread(hThread2, 1);
     }
     CloseHandle(hThread2);
@@ -144,7 +144,7 @@ bool RWorker::isDataUpdated()
 DWORD WINAPI RWorker::ThreadFuncX(LPVOID ptr)
 {
     RWorker* _this = (RWorker*)ptr;
-    if (!_this) return 1; //çàáûëè íàì äàòü îáúåêò, íå áóäåì ðàáîòàòü
+    if (!_this) return 1; //Ð·Ð°Ð±Ñ‹Ð»Ð¸ Ð½Ð°Ð¼ Ð´Ð°Ñ‚ÑŒ Ð¾Ð±ÑŠÐµÐºÑ‚, Ð½Ðµ Ð±ÑƒÐ´ÐµÐ¼ Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ñ‚ÑŒ
 
     for (;;)
     {
@@ -154,9 +154,9 @@ DWORD WINAPI RWorker::ThreadFuncX(LPVOID ptr)
             _this->PARAMS.t += 0.5;
             _this->setDataX(x);
         }
-        //ñäåëàåì âàæíóþ ðàáîòó
+        //ÑÐ´ÐµÐ»Ð°ÐµÐ¼ Ð²Ð°Ð¶Ð½ÑƒÑŽ Ñ€Ð°Ð±Ð¾Ñ‚Ñƒ
                                              //_this->setData( _this->getData() + 1 );
-        //ïîñïèì, ãëÿäÿ íà ôëàã êîíöà ðàáîòû
+        //Ð¿Ð¾ÑÐ¿Ð¸Ð¼, Ð³Ð»ÑÐ´Ñ Ð½Ð° Ñ„Ð»Ð°Ð³ ÐºÐ¾Ð½Ñ†Ð° Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹
         if (WaitForSingleObject(_this->hStopEvtX, 10) != WAIT_TIMEOUT)
             break;
     }
@@ -166,7 +166,7 @@ DWORD WINAPI RWorker::ThreadFuncX(LPVOID ptr)
 DWORD WINAPI RWorker::ThreadFuncY(LPVOID ptr)
 {
     RWorker* _this = (RWorker*)ptr;
-    if (!_this) return 1; //çàáûëè íàì äàòü îáúåêò, íå áóäåì ðàáîòàòü
+    if (!_this) return 1; //Ð·Ð°Ð±Ñ‹Ð»Ð¸ Ð½Ð°Ð¼ Ð´Ð°Ñ‚ÑŒ Ð¾Ð±ÑŠÐµÐºÑ‚, Ð½Ðµ Ð±ÑƒÐ´ÐµÐ¼ Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ñ‚ÑŒ
 
     for (;;)
     {
@@ -177,7 +177,7 @@ DWORD WINAPI RWorker::ThreadFuncY(LPVOID ptr)
             _this->setDataY(y);
         }
         //_this->setData(_this->getData() + 1);
-        //ïîñïèì, ãëÿäÿ íà ôëàã êîíöà ðàáîòû
+        //Ð¿Ð¾ÑÐ¿Ð¸Ð¼, Ð³Ð»ÑÐ´Ñ Ð½Ð° Ñ„Ð»Ð°Ð³ ÐºÐ¾Ð½Ñ†Ð° Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹
         if (WaitForSingleObject(_this->hStopEvtY, 10) != WAIT_TIMEOUT)
             break;
     }
@@ -188,4 +188,3 @@ DWORD WINAPI RWorker::ThreadFuncY(LPVOID ptr)
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
-
